@@ -346,7 +346,9 @@ public class RNBluetoothEscposPrinterModule extends ReactContextBaseJavaModule
             sendDataByte(Command.LF);
             sendDataByte(data);
             sendDataByte(PrinterCommand.POS_Set_PrtAndFeedPaper(30));
-            sendDataByte(PrinterCommand.POS_Set_Cut(1));
+            // Commenting out forced cut of bill for images
+            // TODO: Read this from an parameter or option
+            // sendDataByte(PrinterCommand.POS_Set_Cut(1));
             sendDataByte(PrinterCommand.POS_Set_PrtInit());
         }
     }
